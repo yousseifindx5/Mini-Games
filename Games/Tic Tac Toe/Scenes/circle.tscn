@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://coeg54j5w0jk6"]
+
+[ext_resource type="Texture2D" uid="uid://cg2j2sckurhm5" path="res://Games/Tic Tac Toe/Graphics/circle.png" id="1_v3gcg"]
+
+[node name="Circle" type="Sprite2D" groups=["circles"]]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_v3gcg")

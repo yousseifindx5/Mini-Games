@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwfhrwy0ol78u"
+path="res://.godot/imported/Bg_music.mp3-458632d544e15ac66a9411cfc690e78f.mp3str"
+
+[deps]
+
+source_file="res://Games/Main Menu/Assets/SFX/Bg_music.mp3"
+dest_files=["res://.godot/imported/Bg_music.mp3-458632d544e15ac66a9411cfc690e78f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

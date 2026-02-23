@@ -1,0 +1,190 @@
+[gd_scene load_steps=16 format=3 uid="uid://cwh6limayn5vj"]
+
+[ext_resource type="Texture2D" uid="uid://ufvey3p7enaw" path="res://Games/Ping Pong/Assets/Graphics/Bg 2.png" id="1_du6pr"]
+[ext_resource type="FontFile" uid="uid://c37xynaw4qwlr" path="res://Games/Ping Pong/Assets/Fonts/pixel_font.ttf" id="2_elf4b"]
+[ext_resource type="Script" uid="uid://cu10ltkc5yeaf" path="res://Games/Ping Pong/Scribts/main.gd" id="2_guoxd"]
+[ext_resource type="Script" uid="uid://betceycrog8bm" path="res://Games/Ping Pong/Scribts/player.gd" id="3_rvsrt"]
+[ext_resource type="Script" uid="uid://hycu0g16dpv6" path="res://Games/Ping Pong/Scribts/cpu.gd" id="4_nacht"]
+[ext_resource type="Script" uid="uid://dmgtgj1mk4evi" path="res://Games/Ping Pong/Scribts/ball.gd" id="4_rvsrt"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="7_ftoh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guoxd"]
+size = Vector2(20, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvsrt"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nacht"]
+size = Vector2(1152, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acsc0"]
+size = Vector2(1152, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8o6k"]
+size = Vector2(64, 648)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dpiy"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg6lb"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxwgn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Main" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(1.1111112, 1.1111112)
+texture = ExtResource("1_du6pr")
+centered = false
+script = ExtResource("2_guoxd")
+
+[node name="Player" type="StaticBody2D" parent="."]
+position = Vector2(50, 324)
+script = ExtResource("3_rvsrt")
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_guoxd")
+
+[node name="CPU" type="StaticBody2D" parent="."]
+position = Vector2(1082, 324)
+script = ExtResource("4_nacht")
+
+[node name="ColorRect" type="ColorRect" parent="CPU"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CPU"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_guoxd")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(576, 324)
+collision_mask = 3
+script = ExtResource("4_rvsrt")
+
+[node name="ColorRect" type="ColorRect" parent="Ball"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("RectangleShape2D_rvsrt")
+
+[node name="Borders" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="Top" type="CollisionShape2D" parent="Borders"]
+position = Vector2(576, -32)
+shape = SubResource("RectangleShape2D_nacht")
+
+[node name="Bottom" type="CollisionShape2D" parent="Borders"]
+position = Vector2(576, 676)
+shape = SubResource("RectangleShape2D_acsc0")
+
+[node name="ScoreLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLeft"]
+position = Vector2(-32, 324)
+shape = SubResource("RectangleShape2D_f8o6k")
+
+[node name="ScoreRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreRight"]
+position = Vector2(1184, 324)
+shape = SubResource("RectangleShape2D_f8o6k")
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="PlayerScore" type="Label" parent="Hud"]
+offset_left = 516.0
+offset_top = 5.0
+offset_right = 566.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_elf4b")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CPUScore" type="Label" parent="Hud"]
+offset_left = 708.0
+offset_top = 5.0
+offset_right = 758.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_elf4b")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BallTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back to main menu" type="Button" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 274.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0dpiy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bg6lb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxwgn")
+text = "Back to Main Menu"
+script = ExtResource("7_ftoh4")
+
+[connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
+[connection signal="body_entered" from="ScoreRight" to="." method="_on_score_right_body_entered"]
+[connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]

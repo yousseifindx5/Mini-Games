@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://cr5uytyorv588"]
+
+[ext_resource type="Script" uid="uid://r4kf42kra6u8" path="res://Games/Chess/Scripts/White_wins.gd" id="1_dcxl1"]
+[ext_resource type="Texture2D" uid="uid://c8tyk2gram6p7" path="res://Games/Chess/Assets/Graphics/white_king.png" id="1_wq6pl"]
+[ext_resource type="FontFile" uid="uid://dhdidsdjlutn5" path="res://Games/Chess/Assets/Fonts/pixel_font.ttf" id="2_dcxl1"]
+[ext_resource type="Script" uid="uid://bugi5or47llt1" path="res://Games/Chess/Scripts/Buttons.gd" id="3_gsoj6"]
+[ext_resource type="Texture2D" uid="uid://b0g6ecvxld36d" path="res://Games/Chess/Assets/Graphics/black_king.png" id="4_enqsf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bdc1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5oqw8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbbmn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_li0w7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[node name="Draw" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dcxl1")
+
+[node name="White_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6bdc1")
+
+[node name="Black_panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5oqw8")
+
+[node name="WhiteKing" type="Sprite2D" parent="."]
+position = Vector2(949, 178)
+scale = Vector2(9.109376, 9.109376)
+texture = ExtResource("1_wq6pl")
+
+[node name="Draw - 1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 142.0
+offset_right = 543.0
+offset_bottom = 192.0
+scale = Vector2(2.0000005, 2.0000005)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dcxl1")
+theme_override_font_sizes/font_size = 50
+text = "Dr"
+
+[node name="Draw - 2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 141.0
+offset_right = 771.125
+offset_bottom = 191.0
+scale = Vector2(2.0000005, 2.0000005)
+theme_override_fonts/font = ExtResource("2_dcxl1")
+theme_override_font_sizes/font_size = 50
+text = "aw"
+
+[node name="Play Again" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 0
+offset_left = 440.0
+offset_top = 482.0
+offset_right = 840.0
+offset_bottom = 568.7857
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dcxl1")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbbmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_li0w7")
+text = "Play Again"
+icon_alignment = 1
+script = ExtResource("3_gsoj6")
+
+[node name="Back to Main Menu" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 0
+offset_left = 315.0
+offset_top = 341.0
+offset_right = 965.0
+offset_bottom = 425.375
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dcxl1")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbbmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_li0w7")
+text = "Back to Main Menu"
+icon_alignment = 1
+script = ExtResource("3_gsoj6")
+
+[node name="BlackKing" type="Sprite2D" parent="."]
+position = Vector2(369.875, 177.875)
+scale = Vector2(9.109, 9.109)
+texture = ExtResource("4_enqsf")
+
+[connection signal="pressed" from="Play Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]

@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://6wkx0jko22jt"]
+
+[ext_resource type="Script" uid="uid://r4kf42kra6u8" path="res://Games/Chess/Scripts/White_wins.gd" id="1_h87ni"]
+[ext_resource type="Texture2D" uid="uid://c8tyk2gram6p7" path="res://Games/Chess/Assets/Graphics/white_king.png" id="1_u44cb"]
+[ext_resource type="FontFile" uid="uid://dhdidsdjlutn5" path="res://Games/Chess/Assets/Fonts/pixel_font.ttf" id="2_yb8ts"]
+[ext_resource type="Script" uid="uid://bugi5or47llt1" path="res://Games/Chess/Scripts/Buttons.gd" id="4_tbga8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h87ni"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln1ul"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6bqv"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[node name="WhiteWins" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h87ni")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h87ni")
+
+[node name="WhiteKing" type="Sprite2D" parent="."]
+position = Vector2(361.875, 177.875)
+scale = Vector2(9.109376, 9.109376)
+texture = ExtResource("1_u44cb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 444.875
+offset_top = 152.875
+offset_right = 944.875
+offset_bottom = 202.875
+theme_override_fonts/font = ExtResource("2_yb8ts")
+theme_override_font_sizes/font_size = 50
+text = "White Wins"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -381.0
+offset_top = 30.0
+offset_right = 385.0
+offset_bottom = 249.58997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Play Again" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yb8ts")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_ln1ul")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6bqv")
+text = "Play Again"
+icon_alignment = 1
+script = ExtResource("4_tbga8")
+
+[node name="Back to Main Menu" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yb8ts")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_ln1ul")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t6bqv")
+text = "Back to Main Menu"
+icon_alignment = 1
+script = ExtResource("4_tbga8")
+
+[connection signal="pressed" from="VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]

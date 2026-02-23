@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmt5n7vqb3u7v"]
+
+[ext_resource type="AudioStream" uid="uid://bwfhrwy0ol78u" path="res://Games/Main Menu/Assets/SFX/Bg_music.mp3" id="1_x60rv"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_x60rv")
+autoplay = true
+parameters/looping = true

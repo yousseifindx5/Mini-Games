@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4e5shhn0p8c4"]
+
+[ext_resource type="Script" uid="uid://o31552g8xfes" path="res://Games/Main Menu/Scripts/options.gd" id="1_4thmr"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="2_cvwia"]
+[ext_resource type="Script" uid="uid://b3m0fn0qcxnbc" path="res://Games/Main Menu/Scripts/mute_button.gd" id="3_cvwia"]
+[ext_resource type="FontFile" uid="uid://dhdidsdjlutn5" path="res://Games/Chess/Assets/Fonts/pixel_font.ttf" id="3_mxkhh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxkhh"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw661"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j246o"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvwia"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj1g5"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uo47"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[node name="Options" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_4thmr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 0.85882354, 0.62352943, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back to main menu" type="Button" parent="CanvasLayer"]
+offset_left = 37.0
+offset_top = 45.0
+offset_right = 337.0
+offset_bottom = 89.091995
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxkhh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tw661")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j246o")
+text = "Back to Main Menu"
+script = ExtResource("2_cvwia")
+
+[node name="Buttons_Bg" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 130.0
+offset_top = 277.0
+offset_right = 1130.0
+offset_bottom = 419.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvwia")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 436.0
+offset_top = 309.0
+offset_right = 820.0
+offset_bottom = 390.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Mute Button" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(800, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_mxkhh")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_gj1g5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8uo47")
+icon_alignment = 1
+script = ExtResource("3_cvwia")
+
+[connection signal="pressed" from="CanvasLayer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="Buttons/Mute Button" to="Buttons/Mute Button" method="_on_pressed"]

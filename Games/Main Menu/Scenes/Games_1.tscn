@@ -1,0 +1,273 @@
+[gd_scene load_steps=22 format=3 uid="uid://cqd8mj6eng7o"]
+
+[ext_resource type="Script" uid="uid://tlkimcby5r0x" path="res://Games/Main Menu/Scripts/games_1.gd" id="1_aw1x1"]
+[ext_resource type="Texture2D" uid="uid://b1rodfjp2cum0" path="res://Games/Main Menu/Assets/Graphics/Arrows.png" id="1_v7xkw"]
+[ext_resource type="Texture2D" uid="uid://bxpecet4trfdo" path="res://Games/Main Menu/Assets/Graphics/Untitled design (24).png" id="3_8txbg"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="4_8txbg"]
+[ext_resource type="Texture2D" uid="uid://ewfq2kg8eeuy" path="res://Games/Main Menu/Assets/Graphics/Chess.png" id="5_el4tt"]
+[ext_resource type="Texture2D" uid="uid://c4g5atb7o7wm1" path="res://Games/Main Menu/Assets/Graphics/Sudoku.png" id="6_al2ms"]
+[ext_resource type="Texture2D" uid="uid://b02h4ty848pe0" path="res://Games/Main Menu/Assets/Graphics/Tic Tac Toe.png" id="7_al2ms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfbh0"]
+bg_color = Color(1, 0.85882354, 0.62352943, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7xkw"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aw1x1"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8txbg"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjeii"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el4tt"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_al2ms"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwlv8"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnoga"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjy4s"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou3it"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwjny"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxxi6"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elkf4"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[node name="Games_1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aw1x1")
+
+[node name="Bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hfbh0")
+
+[node name="Left_Arrow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 310.0
+offset_right = 101.0
+offset_bottom = 393.0
+theme_override_icons/icon = ExtResource("1_v7xkw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7xkw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aw1x1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8txbg")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pjeii")
+theme_override_styles/focus = SubResource("StyleBoxFlat_el4tt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="UntitledDesign(24)" type="Sprite2D" parent="Left_Arrow"]
+position = Vector2(41.999996, 41.5)
+scale = Vector2(0.12799999, 0.12999998)
+texture = ExtResource("3_8txbg")
+
+[node name="UntitledDesign(24)2" type="Sprite2D" parent="Left_Arrow"]
+position = Vector2(41.999996, 41.5)
+scale = Vector2(0.12799999, 0.12999998)
+texture = ExtResource("3_8txbg")
+
+[node name="UntitledDesign(24)3" type="Sprite2D" parent="Left_Arrow"]
+position = Vector2(41.999996, 41.5)
+scale = Vector2(0.12799999, 0.12999998)
+texture = ExtResource("3_8txbg")
+
+[node name="UntitledDesign(24)4" type="Sprite2D" parent="Left_Arrow"]
+position = Vector2(41.999996, 41.5)
+scale = Vector2(0.12799999, 0.12999998)
+texture = ExtResource("3_8txbg")
+
+[node name="Right_Arrow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1262.0
+offset_top = 393.0
+offset_right = 1345.0
+offset_bottom = 476.0
+rotation = 3.1415927
+theme_override_icons/icon = ExtResource("1_v7xkw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7xkw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aw1x1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8txbg")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pjeii")
+theme_override_styles/focus = SubResource("StyleBoxFlat_el4tt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Game_No" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.0
+offset_top = 24.0
+offset_right = 158.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "1 / 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back to main menu" type="Button" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 22.0
+offset_right = 333.0
+offset_bottom = 66.091995
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_al2ms")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pwlv8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mnoga")
+text = "Back to Main Menu"
+script = ExtResource("4_8txbg")
+
+[node name="Chess Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 214.338
+offset_right = 396.215
+offset_bottom = 484.127
+theme_override_icons/icon = ExtResource("5_el4tt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjy4s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ou3it")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cwjny")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oxxi6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_elkf4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Chess Game"]
+layout_mode = 0
+offset_left = 40.575012
+offset_top = 264.66248
+offset_right = 181.57501
+offset_bottom = 333.66248
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Chess"
+
+[node name="Sudoku Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 214.338
+offset_right = 757.67
+offset_bottom = 482.19202
+theme_override_icons/icon = ExtResource("6_al2ms")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjy4s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ou3it")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cwjny")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oxxi6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_elkf4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Sudoku Game"]
+layout_mode = 0
+offset_left = 26.575012
+offset_top = 264.66248
+offset_right = 207.57501
+offset_bottom = 333.66248
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Sudoku"
+
+[node name="Tic_Tac_Toe Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 892.0
+offset_top = 214.338
+offset_right = 1120.215
+offset_bottom = 484.58197
+theme_override_icons/icon = ExtResource("7_al2ms")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjy4s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ou3it")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cwjny")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oxxi6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_elkf4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Tic_Tac_Toe Game"]
+layout_mode = 0
+offset_left = -17.424988
+offset_top = 264.66248
+offset_right = 245.57501
+offset_bottom = 333.66248
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Tic Tac Toe"
+
+[connection signal="pressed" from="Left_Arrow" to="." method="_on_left_arrow_pressed"]
+[connection signal="pressed" from="Right_Arrow" to="." method="_on_right_arrow_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="Chess Game" to="." method="_on_chess_game_pressed"]
+[connection signal="pressed" from="Sudoku Game" to="." method="_on_sudoku_game_pressed"]
+[connection signal="pressed" from="Tic_Tac_Toe Game" to="." method="_on_tic_tac_toe_game_pressed"]

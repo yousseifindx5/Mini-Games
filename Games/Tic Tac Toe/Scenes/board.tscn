@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ble73gnekx2db"]
+
+[ext_resource type="Texture2D" uid="uid://crlyb565fpsqh" path="res://Games/Tic Tac Toe/Graphics/grid.png" id="1_c4kej"]
+
+[node name="Board" type="Sprite2D"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_c4kej")

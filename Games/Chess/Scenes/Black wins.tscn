@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://cws7k11a577fi"]
+
+[ext_resource type="Script" uid="uid://r4kf42kra6u8" path="res://Games/Chess/Scripts/White_wins.gd" id="1_1sobc"]
+[ext_resource type="Texture2D" uid="uid://b0g6ecvxld36d" path="res://Games/Chess/Assets/Graphics/black_king.png" id="2_rr3rx"]
+[ext_resource type="FontFile" uid="uid://dhdidsdjlutn5" path="res://Games/Chess/Assets/Fonts/pixel_font.ttf" id="3_8l5wy"]
+[ext_resource type="Script" uid="uid://bugi5or47llt1" path="res://Games/Chess/Scripts/Buttons.gd" id="4_15pvq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_844u7"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no07v"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhtfi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[node name="BlackWins" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1sobc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_844u7")
+
+[node name="BlackKing" type="Sprite2D" parent="."]
+position = Vector2(369.875, 177.875)
+scale = Vector2(9.109, 9.109)
+texture = ExtResource("2_rr3rx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 452.875
+offset_top = 152.875
+offset_right = 952.875
+offset_bottom = 202.875
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8l5wy")
+theme_override_font_sizes/font_size = 50
+text = "Black Wins"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -381.0
+offset_top = 30.0
+offset_right = 385.0
+offset_bottom = 249.5899
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Play Again" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8l5wy")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_no07v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dhtfi")
+text = "Play Again"
+icon_alignment = 1
+script = ExtResource("4_15pvq")
+
+[node name="Back to Main Menu" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8l5wy")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_no07v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dhtfi")
+text = "Back to Main Menu"
+icon_alignment = 1
+script = ExtResource("4_15pvq")
+
+[connection signal="pressed" from="VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]

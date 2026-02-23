@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://ow62swkgy3la"]
+
+[ext_resource type="Script" uid="uid://bk4heqklvyi7q" path="res://Games/Tic Tac Toe/Scripts/main.gd" id="1_4fccw"]
+[ext_resource type="PackedScene" uid="uid://ble73gnekx2db" path="res://Games/Tic Tac Toe/Scenes/board.tscn" id="1_fq42t"]
+[ext_resource type="PackedScene" uid="uid://dv00ri84y0w6b" path="res://Games/Tic Tac Toe/Scenes/cross.tscn" id="3_ajv0r"]
+[ext_resource type="PackedScene" uid="uid://coeg54j5w0jk6" path="res://Games/Tic Tac Toe/Scenes/circle.tscn" id="3_ldyuc"]
+[ext_resource type="PackedScene" uid="uid://cm82rwj3867xr" path="res://Games/Tic Tac Toe/Scenes/game_over_menu.tscn" id="5_m1y5t"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="6_m4ctk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57jdi"]
+bg_color = Color(1, 0.85882354, 0.62352943, 1)
+border_width_left = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gk5c"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6n5b"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17xwj"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6eew"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Main" type="Node"]
+script = ExtResource("1_4fccw")
+circle_scene = ExtResource("3_ldyuc")
+cross_scene = ExtResource("3_ajv0r")
+
+[node name="Board" parent="." instance=ExtResource("1_fq42t")]
+position = Vector2(360, 360)
+
+[node name="SidePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 600)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -560.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_57jdi")
+
+[node name="PlayerLabel" type="Label" parent="."]
+offset_left = 866.0
+offset_top = 207.0
+offset_right = 1166.0
+offset_bottom = 274.0
+theme_override_font_sizes/font_size = 46
+text = "Next Player:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerPanel" type="Panel" parent="."]
+offset_left = 916.0
+offset_top = 287.0
+offset_right = 1116.0
+offset_bottom = 487.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gk5c")
+
+[node name="GameOverMenu" parent="." instance=ExtResource("5_m1y5t")]
+process_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back to main menu" type="Button" parent="CanvasLayer"]
+offset_left = 945.0
+offset_top = 30.0
+offset_right = 1245.0
+offset_bottom = 74.091995
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_s6n5b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_17xwj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r6eew")
+text = "Back to Main Menu"
+script = ExtResource("6_m4ctk")
+
+[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]
+[connection signal="pressed" from="CanvasLayer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]

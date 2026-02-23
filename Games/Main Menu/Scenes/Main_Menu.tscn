@@ -1,0 +1,159 @@
+[gd_scene load_steps=10 format=3 uid="uid://jki6f47nbu76"]
+
+[ext_resource type="Script" uid="uid://ddtvkixejv7ru" path="res://Games/Main Menu/Scripts/main_menu.gd" id="1_0ugu2"]
+[ext_resource type="FontFile" uid="uid://dhdidsdjlutn5" path="res://Games/Chess/Assets/Fonts/pixel_font.ttf" id="1_p1oul"]
+[ext_resource type="Script" uid="uid://bugi5or47llt1" path="res://Games/Chess/Scripts/Buttons.gd" id="2_0ugu2"]
+[ext_resource type="FontFile" uid="uid://ccurkptuhv1k2" path="res://Games/Main Menu/Assets/Fonts/GveretLevin-Regular.ttf" id="4_3p77g"]
+[ext_resource type="Texture2D" uid="uid://bfm0opdp08iuy" path="res://Games/Main Menu/Assets/Graphics/Copy_right.png" id="5_cjcdh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drl64"]
+bg_color = Color(1, 0.85882354, 0.62352943, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx7fe"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p77g"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjcdh"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ugu2")
+
+[node name="Bg" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_drl64")
+
+[node name="Buttons_Bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -120.0
+offset_right = 224.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vx7fe")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -88.0
+offset_right = 192.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Start Button" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_p1oul")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3p77g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cjcdh")
+text = "Start Game"
+icon_alignment = 1
+script = ExtResource("2_0ugu2")
+
+[node name="Options" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_p1oul")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3p77g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cjcdh")
+text = "Options"
+icon_alignment = 1
+script = ExtResource("2_0ugu2")
+
+[node name="Exit" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_p1oul")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3p77g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cjcdh")
+text = "Exit"
+icon_alignment = 1
+script = ExtResource("2_0ugu2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 66.0
+offset_right = 940.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3p77g")
+theme_override_font_sizes/font_size = 100
+text = "Mini Games"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 634.0
+offset_right = 268.0
+offset_bottom = 683.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3p77g")
+theme_override_font_sizes/font_size = 30
+text = "By: Yousseifindx5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CopyRight" type="Sprite2D" parent="."]
+position = Vector2(1134, 663)
+scale = Vector2(0.41095886, 0.41095892)
+texture = ExtResource("5_cjcdh")
+
+[connection signal="pressed" from="Buttons/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]

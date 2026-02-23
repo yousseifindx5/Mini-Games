@@ -1,0 +1,232 @@
+[gd_scene load_steps=16 format=3 uid="uid://dv2weqgbjob0t"]
+
+[ext_resource type="Script" uid="uid://ba4jtuhfdnls2" path="res://Games/Sudoku/scripts/game.gd" id="1_03ovy"]
+[ext_resource type="Texture2D" uid="uid://c1wsg46wsqgbu" path="res://Games/Sudoku/Graphics/Eraser.png" id="2_t0oc6"]
+[ext_resource type="Texture2D" uid="uid://cdwesos0uoyub" path="res://Games/Sudoku/Graphics/Pen.png" id="3_rxti5"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="4_bqfxj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxq13"]
+texture = ExtResource("2_t0oc6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0oc6"]
+texture = ExtResource("2_t0oc6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxti5"]
+texture = ExtResource("2_t0oc6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2fqqe"]
+texture = ExtResource("2_t0oc6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1grl"]
+texture = ExtResource("3_rxti5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v0n7j"]
+texture = ExtResource("3_rxti5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aogl1"]
+texture = ExtResource("3_rxti5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvdil"]
+texture = ExtResource("3_rxti5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4116"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uak10"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ti0wi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_03ovy")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 0.85882354, 0.62352943, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 370.0
+offset_top = 48.0
+offset_right = 410.0
+offset_bottom = 88.0
+columns = 9
+
+[node name="SelectGrid" type="GridContainer" parent="."]
+offset_left = 304.0
+offset_top = 617.0
+offset_right = 944.0
+offset_bottom = 681.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 10
+columns = 9
+
+[node name="Button" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "1"
+
+[node name="Button2" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "2"
+
+[node name="Button3" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "3"
+
+[node name="Button4" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "4"
+
+[node name="Button5" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "5"
+
+[node name="Button6" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "6"
+
+[node name="Button7" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "7"
+
+[node name="Button8" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "8"
+
+[node name="Button9" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "9"
+
+[node name="MistakesLabel" type="Label" parent="."]
+offset_left = 541.0
+offset_top = 5.0
+offset_right = 565.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Lines" type="Node2D" parent="."]
+position = Vector2(260, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Lines"]
+offset_left = 275.0
+offset_top = 48.0
+offset_right = 277.0
+offset_bottom = 556.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Lines"]
+offset_left = 443.0
+offset_top = 48.0
+offset_right = 445.0
+offset_bottom = 556.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Lines"]
+offset_left = 609.9925
+offset_top = 216.0
+offset_right = 611.9855
+offset_bottom = 714.0
+rotation = 1.5707964
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Lines"]
+offset_left = 609.9925
+offset_top = 387.0
+offset_right = 611.9855
+offset_bottom = 885.0
+rotation = 1.5707964
+color = Color(0, 0, 0, 1)
+
+[node name="EraserButton" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+offset_left = 933.0
+offset_top = 270.0
+offset_right = 997.0
+offset_bottom = 334.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uxq13")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t0oc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rxti5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_2fqqe")
+
+[node name="Label" type="Label" parent="EraserButton"]
+layout_mode = 0
+offset_top = 57.0
+offset_right = 63.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Erase"
+
+[node name="NotesButton" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+offset_left = 239.0
+offset_top = 270.0
+offset_right = 303.0
+offset_bottom = 334.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_a1grl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v0n7j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aogl1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qvdil")
+
+[node name="Label" type="Label" parent="NotesButton"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 57.0
+offset_right = 66.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Notes"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back to main menu" type="Button" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 22.0
+offset_right = 333.0
+offset_bottom = 66.091995
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4116")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uak10")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ti0wi")
+text = "Back to Main Menu"
+script = ExtResource("4_bqfxj")
+
+[connection signal="pressed" from="CanvasLayer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
