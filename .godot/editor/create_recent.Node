@@ -1,0 +1,14 @@
+Panel
+Sprite2D
+Node
+Area2D
+Button
+ColorRect
+AudioStreamPlayer
+Label
+CanvasLayer
+ShapeCast2D
+Control
+TextureButton
+VBoxContainer
+OptionButton

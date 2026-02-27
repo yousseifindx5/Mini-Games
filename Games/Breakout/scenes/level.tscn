@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwyc0jbak3c6s"]
+
+[ext_resource type="Script" uid="uid://cygfme5vt5nq8" path="res://Games/Breakout/scripts/level.gd" id="1_1exlk"]
+[ext_resource type="PackedScene" uid="uid://b1jicjrct1yrv" path="res://Games/Breakout/scenes/paddle.tscn" id="1_ll22d"]
+[ext_resource type="PackedScene" uid="uid://be35w3b5do0sx" path="res://Games/Breakout/scenes/ball.tscn" id="2_nj764"]
+[ext_resource type="Texture2D" uid="uid://bejk6kved71lg" path="res://Games/Breakout/assets/Bg Sprite.png" id="4_ocycb"]
+[ext_resource type="Texture2D" uid="uid://tckvtyadtmp6" path="res://Games/Breakout/assets/ball.png" id="5_1s6an"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="6_bxswx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg0xg"]
+size = Vector2(1280, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl0tk"]
+size = Vector2(20, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4odxf"]
+size = Vector2(20, 720)
+
+[sub_resource type="Curve" id="Curve_edqny"]
+_data = [Vector2(0.0266344, 0.0188679), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqxs8"]
+size = Vector2(1280, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsc8b"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6ako"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvxer"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_1exlk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Ceiling" type="CollisionShape2D" parent="Walls"]
+position = Vector2(640, -10)
+shape = SubResource("RectangleShape2D_tg0xg")
+
+[node name="Right Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1290, 360)
+shape = SubResource("RectangleShape2D_gl0tk")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-10, 360)
+shape = SubResource("RectangleShape2D_4odxf")
+
+[node name="Paddle" parent="." instance=ExtResource("1_ll22d")]
+position = Vector2(639, 626)
+
+[node name="Ball" parent="." instance=ExtResource("2_nj764")]
+position = Vector2(641, 440)
+
+[node name="Bg Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.243137, 1, 0.164706)
+z_index = -2
+position = Vector2(640, 360)
+scale = Vector2(0.95238096, 0.9375)
+texture = ExtResource("4_ocycb")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.45098)
+position = Vector2(569, 331)
+amount = 200
+texture = ExtResource("5_1s6an")
+lifetime = 5.0
+preprocess = 5.0
+emission_shape = 1
+emission_sphere_radius = 9.23
+direction = Vector2(1, 1)
+gravity = Vector2(0, 0)
+radial_accel_max = 100.0
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+scale_amount_curve = SubResource("Curve_edqny")
+
+[node name="Deathzone" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+position = Vector2(640, 730)
+shape = SubResource("RectangleShape2D_xqxs8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back to main menu" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 675.0
+offset_right = 229.0
+offset_bottom = 711.7433
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fsc8b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e6ako")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bvxer")
+text = "Back to Main Menu"
+script = ExtResource("6_bxswx")
+
+[connection signal="body_entered" from="Deathzone" to="Ball" method="_on_deathzone_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]

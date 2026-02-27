@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://eyxfen2vvqxo"]
+
+[ext_resource type="Texture2D" uid="uid://bn4a3lvngqnjm" path="res://Games/MineSweeper/assets/Tileset.png" id="1_m4sk8"]
+[ext_resource type="Script" uid="uid://bs7by7kjfh06d" path="res://Games/MineSweeper/Scripts/tile_map.gd" id="2_olyp5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agy0d"]
+texture = ExtResource("1_m4sk8")
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ljtgs"]
+tile_size = Vector2i(50, 50)
+sources/0 = SubResource("TileSetAtlasSource_agy0d")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_ljtgs")
+format = 2
+layer_0/name = "Mines"
+layer_1/name = "Numbers"
+layer_2/name = "Grass"
+layer_3/name = "Flags"
+layer_4/name = "Hover"
+script = ExtResource("2_olyp5")

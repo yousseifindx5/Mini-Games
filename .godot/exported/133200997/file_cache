@@ -1,0 +1,28 @@
+res://addons/godot_super-wakatime/api_key_prompt.tscn::a6988a5ba43d5aa92a08f216c1db28db::1771310793::res://.godot/exported/133200997/export-cd8705cb5e2533bd79c64579ac674dae-api_key_prompt.scn
+res://addons/godot_super-wakatime/counter.tscn::7f13ad35960e259f6de719f9785ce249::1771310793::res://.godot/exported/133200997/export-4af6c9115c1c285af5925fa1ce6a526e-counter.scn
+res://Games/Main Menu/Scenes/Games_1.tscn::5385fe5efec6649787eaded17c58a271::1772149944::res://.godot/exported/133200997/export-cc800217f1e7946a62c4e02d8b3ea691-Games_1.scn
+res://Games/Main Menu/Scenes/Games_2.tscn::59c35aacf44bf525c65257ca3e6830a3::1772150357::res://.godot/exported/133200997/export-d9cf9a7f14f333a6f26a7c98259c4bb0-Games_2.scn
+res://Games/Main Menu/Scenes/Main_Menu.tscn::41765bffb924392d06ea12d419422f7c::1772141413::res://.godot/exported/133200997/export-718db7c607d727958ad21e32222d58b6-Main_Menu.scn
+res://Games/Main Menu/Scenes/MusicPlayer.tscn::5d79aac629f9d8a480b3609f8ae5c924::1771798925::res://.godot/exported/133200997/export-318446a28f1ffa72756a1d12d2101a7d-MusicPlayer.scn
+res://Games/Main Menu/Scenes/Options.tscn::04aa123d24ab30c3be8e4863391ea311::1772150763::res://.godot/exported/133200997/export-81768a58309de517063ec7e663943e96-Options.scn
+res://Games/Ping Pong/Scenes/main.tscn::a80dd523e7d141e22a4297fbfcf97866::1771800577::res://.godot/exported/133200997/export-f1fa6d38dafdab699dd00a81ca59cfea-main.scn
+res://Games/Sudoku/scenes/Game.tscn::544a6658b78273bfa405d43c4b65cec9::1771792598::res://.godot/exported/133200997/export-a598423a7a2ad8fe563b1391ebddb052-Game.scn
+res://Games/Sudoku/scenes/You lost.tscn::b154a9ffa70295e14eb17dd42cb92e15::1771773645::res://.godot/exported/133200997/export-f623fce034d21055bd57c5bb13b2c510-You lost.scn
+res://Games/Sudoku/scenes/You win.tscn::500e3c6e0ad312c6468ea882a34f817a::1771773644::res://.godot/exported/133200997/export-3d9c5b7f40086e739b1088e089501103-You win.scn
+res://Games/Tic Tac Toe/Scenes/board.tscn::b921529043e3e8a6914b6f64bdea8937::1771594618::res://.godot/exported/133200997/export-b9dba47891a05a3daaeba2f44e4bafff-board.scn
+res://Games/Tic Tac Toe/Scenes/circle.tscn::96b38dc7ad05f3cb7bb9371d8db487eb::1771594588::res://.godot/exported/133200997/export-c22f82ce7c1b2fe69e32284740b206c6-circle.scn
+res://Games/Tic Tac Toe/Scenes/cross.tscn::bbbc6b07302a6023df12e42c85c5817b::1771594586::res://.godot/exported/133200997/export-b6473ffd1ac5f2f0f562f3e1db66b1a8-cross.scn
+res://Games/Tic Tac Toe/Scenes/game_over_menu.tscn::b13037eda9fd8140646625810f208102::1771842236::res://.godot/exported/133200997/export-5c8214a3702cd571c63213f6c3ffa7c6-game_over_menu.scn
+res://Games/Tic Tac Toe/Scenes/main.tscn::f631f840c41c6682301ef5fabbf4f2f6::1771842238::res://.godot/exported/133200997/export-9a068c00ddff2e5682b45afc0fe46b1f-main.scn
+res://Test.tscn::9745d3afc3dd40f349aa41f53b4acb10::1771310794::res://.godot/exported/133200997/export-424cafac01f45de89b53d7dc0c0edabc-Test.scn
+res://Games/Breakout/scenes/ball.tscn::eaada1eaff011e773c89478509318667::1772143182::res://.godot/exported/133200997/export-98d2b196560ffe74036756040409bf26-ball.scn
+res://Games/Breakout/scenes/brick.tscn::0840dda44206b1d46e548f8030491bd8::1772143191::res://.godot/exported/133200997/export-ba5c067196736c88e83bf8fb6797a1d1-brick.scn
+res://Games/Breakout/scenes/game_manager.tscn::88ef652927b5c3a0dca66755476b11c5::1772150713::res://.godot/exported/133200997/export-ee75e3bacd40c0bb12a5762a517ac5a3-game_manager.scn
+res://Games/Breakout/scenes/level.tscn::ce56427c5d4aead2a5a811a44771c95a::1772149015::res://.godot/exported/133200997/export-06bd58bb9c2c6315a2dd1f1f8be5adff-level.scn
+res://Games/Breakout/scenes/paddle.tscn::1a383c5d5e355a9bffd2cce3ce89bf53::1772145391::res://.godot/exported/133200997/export-0f27967aa29f6aded41b2c5a8b701887-paddle.scn
+res://Games/MineSweeper/scenes/hud.tscn::7a04f1b6c84e1f7ad6e059a8904899ce::1772142543::res://.godot/exported/133200997/export-ed2d6a3e07e46d7d4711da68a8c1ec7b-hud.scn
+res://Games/MineSweeper/scenes/main.tscn::deec3341b92ae59b470d1648b5c758b8::1772150030::res://.godot/exported/133200997/export-e7eacb13016d2200ea566c93f1a69c65-main.scn
+res://Games/MineSweeper/scenes/new_style_box_flat.tres::a0bf7efbecf8f809b78a30238e464dd0::1772136230::res://.godot/exported/133200997/export-afd8fcd04fe8bce95f963bbf79dd02af-new_style_box_flat.res
+res://Games/MineSweeper/scenes/tile_map.tscn::1543bdcb68b5629d4501efcd7276ddda::1772137423::res://.godot/exported/133200997/export-7c17b126408074a8e6b889d9eb06287c-tile_map.scn
+res://Games/MineSweeper/scenes/You Lost.tscn::0f71bae1610264966c51d87371e90978::1772141522::res://.godot/exported/133200997/export-4719be84a4adea7bf4030b8d8e206a31-You Lost.scn
+res://Games/MineSweeper/scenes/You Win.tscn::8de61cced1878751a66822e9d1f06fe0::1772141326::res://.godot/exported/133200997/export-79d884f158e13b259708b24afbd2690a-You Win.scn

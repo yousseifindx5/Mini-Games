@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://dww7376cibolg"]
+
+[ext_resource type="Texture2D" uid="uid://fi8q2wvpqd47" path="res://Games/MineSweeper/assets/bg.png" id="1_muiut"]
+[ext_resource type="Script" uid="uid://cytwb7wpaywj5" path="res://Games/MineSweeper/Scripts/main.gd" id="1_sgikt"]
+[ext_resource type="PackedScene" uid="uid://eyxfen2vvqxo" path="res://Games/MineSweeper/scenes/tile_map.tscn" id="3_lemmq"]
+[ext_resource type="PackedScene" uid="uid://d05640hmpi44l" path="res://Games/MineSweeper/scenes/hud.tscn" id="4_lcatd"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="5_uvtid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvtid"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2iyc"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwa80"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7370y"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Main" type="Node"]
+script = ExtResource("1_sgikt")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.0285714, 1.0285714)
+texture = ExtResource("1_muiut")
+offset = Vector2(375, 350)
+
+[node name="TileMap" parent="." instance=ExtResource("3_lemmq")]
+scale = Vector2(1.029, 1.029)
+
+[node name="HUD" parent="." instance=ExtResource("4_lcatd")]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 771.0
+offset_right = 791.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uvtid")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back to main menu" type="Button" parent="CanvasLayer"]
+offset_left = 881.0
+offset_top = 22.0
+offset_right = 1181.0
+offset_bottom = 66.091995
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2iyc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qwa80")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7370y")
+text = "Back to Main Menu"
+script = ExtResource("5_uvtid")
+
+[connection signal="pressed" from="CanvasLayer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]

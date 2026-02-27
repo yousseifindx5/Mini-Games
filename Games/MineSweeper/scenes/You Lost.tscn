@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr5uytyorv588"]
+
+[ext_resource type="Script" uid="uid://r4kf42kra6u8" path="res://Games/MineSweeper/Scripts/Win or Lost.gd" id="1_1joqo"]
+[ext_resource type="Script" uid="uid://b51i33b0a60s6" path="res://Games/Main Menu/Scripts/Buttons.gd" id="2_2quvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bdc1"]
+bg_color = Color(1, 0.85882354, 0.62352943, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbbmn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_li0w7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[node name="You Lost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1joqo")
+
+[node name="BackGround" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6bdc1")
+
+[node name="You W_L" type="Label" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 145.0
+offset_right = 635.0
+offset_bottom = 214.0
+scale = Vector2(2.0000005, 2.0000005)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "You Lost!"
+
+[node name="Play Again" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 0
+offset_left = 440.0
+offset_top = 482.0
+offset_right = 840.0
+offset_bottom = 568.7857
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbbmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_li0w7")
+text = "Play Again"
+icon_alignment = 1
+script = ExtResource("2_2quvt")
+
+[node name="Back to Main Menu" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 81)
+layout_mode = 0
+offset_left = 315.0
+offset_top = 341.0
+offset_right = 965.0
+offset_bottom = 425.375
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbbmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_li0w7")
+text = "Back to Main Menu"
+icon_alignment = 1
+script = ExtResource("2_2quvt")
+
+[connection signal="pressed" from="Play Again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]

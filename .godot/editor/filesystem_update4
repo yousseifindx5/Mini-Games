@@ -1,0 +1,27 @@
+res://Games/Main Menu/Scenes/Games_1.tscn
+res://Games/MineSweeper/scenes/main.tscn
+res://Games/MineSweeper/scenes/game_over.tscn
+res://Games/MineSweeper/scenes/tile_map.tscn
+res://Games/MineSweeper/Scripts/main.gd
+res://Games/MineSweeper/scenes/hud.tscn
+res://Games/MineSweeper/Scripts/game_over.gd
+res://Games/MineSweeper/Scripts/tile_map.gd
+res://Games/MineSweeper/scenes/draw.tscn
+res://Games/MineSweeper/scenes/You Lost.tscn
+res://Games/Main Menu/Scenes/Main_Menu.tscn
+res://Games/MineSweeper/scenes/You Win.tscn
+res://Games/MineSweeper/Scripts/Win or Lost.gd
+res://Games/Main Menu/Scripts/games_1.gd
+res://Games/Breakout/scenes/level.tscn
+res://Games/Breakout/scenes/game_manager.tscn
+res://Games/Breakout/scenes/ball.tscn
+res://Games/Breakout/scenes/brick.tscn
+res://Games/Breakout/scenes/paddle.tscn
+res://Games/Breakout/scripts/level.gd
+res://Games/Breakout/scripts/ball.gd
+res://Games/Breakout/scripts/brick.gd
+res://Games/Breakout/scripts/game_manager.gd
+res://Games/Breakout/scripts/paddle.gd
+res://Games/Main Menu/Scenes/Games_2.tscn
+res://Games/Main Menu/Scripts/games_2.gd
+res://Games/Main Menu/Scenes/Options.tscn
